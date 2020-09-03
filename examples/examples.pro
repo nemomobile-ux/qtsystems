@@ -12,3 +12,5 @@ sources.path = $$[QT_INSTALL_EXAMPLES]
 INSTALLS += sources
 
 maemo5: CONFIG += qt_example
+
+CONFIG += install_ok

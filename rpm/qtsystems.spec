@@ -16,7 +16,12 @@ BuildRequires:  pkgconfig(Qt5Test)
 BuildRequires:  pkgconfig(Qt5OpenGL)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
+%if 0%{?fedora}
+BuildRequires:  qt5-qtbase-devel
+BuildRequires:  qt5-qtbase-private-devel
+%else
 BuildRequires:  qt5-qmake
+%endif
 BuildRequires:  fdupes
 BuildRequires:  pkgconfig(libudev)
 BuildRequires:  pkgconfig(mce-qt5) >= 1.3.0
