@@ -147,9 +147,8 @@ This package contains the PublishSuvbscribe import for QtDeclarative
 %setup -q -n %{name}-%{version}
 
 %build
-export QTDIR=/usr/share/qt5
 touch .git
-%qmake5 CONFIG+=ofono CONFIG+=nox11option CONFIG+=battery_mce CONFIG+=ssu CONFIG-=bluez
+%{qmake_qt5} CONFIG+=ofono CONFIG+=nox11option CONFIG+=battery_mce CONFIG+=ssu CONFIG-=bluez
 make %{?_smp_mflags}
 
 %install
@@ -205,8 +204,8 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 %{_libdir}/libQt5SystemInfo.prl
 %{_libdir}/pkgconfig/Qt5SystemInfo.pc
 %{_includedir}/qt5/QtSystemInfo/
-%{_datadir}/qt5/mkspecs/modules/qt_lib_systeminfo.pri
-%{_datadir}/qt5/mkspecs/modules/qt_lib_systeminfo_private.pri
+%{_libdir}/qt5/mkspecs/modules/qt_lib_systeminfo.pri
+%{_libdir}/qt5/mkspecs/modules/qt_lib_systeminfo_private.pri
 %{_libdir}/cmake/Qt5SystemInfo/
 
 %files -n qt5-qtdeclarative-systeminfo
@@ -226,8 +225,8 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 %{_libdir}/libQt5ServiceFramework.prl
 %{_libdir}/pkgconfig/Qt5ServiceFramework.pc
 %{_includedir}/qt5/QtServiceFramework/
-%{_datadir}/qt5/mkspecs/modules/qt_lib_serviceframework.pri
-%{_datadir}/qt5/mkspecs/modules/qt_lib_serviceframework_private.pri
+%{_libdir}/qt5/mkspecs/modules/qt_lib_serviceframework.pri
+%{_libdir}/qt5/mkspecs/modules/qt_lib_serviceframework_private.pri
 %{_libdir}/cmake/Qt5ServiceFramework/
 
 %files -n qt5-qtdeclarative-serviceframework
@@ -248,8 +247,8 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 %{_libdir}/libQt5PublishSubscribe.prl
 %{_libdir}/pkgconfig/Qt5PublishSubscribe.pc
 %{_includedir}/qt5/QtPublishSubscribe/
-%{_datadir}/qt5/mkspecs/modules/qt_lib_publishsubscribe.pri
-%{_datadir}/qt5/mkspecs/modules/qt_lib_publishsubscribe_private.pri
+%{_libdir}/qt5/mkspecs/modules/qt_lib_publishsubscribe.pri
+%{_libdir}/qt5/mkspecs/modules/qt_lib_publishsubscribe_private.pri
 %{_libdir}/cmake/Qt5PublishSubscribe/
 
 %files -n qt5-qtdeclarative-publishsubscribe
